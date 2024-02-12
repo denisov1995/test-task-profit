@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-nav">
+    <input type="radio" id="login-tab" name="tab" />
+    <label for="login-tab" class="tab">Login</label>
+    <input type="radio" id="registration-tab" name="tab" checked />
+    <label for="registration-tab" class="tab">Registration</label>
+  </div>
+
+  <form id="login-form" class="form">
+    <div class="form-group">
+      <label for="login-email">Email</label>
+      <input type="email" id="login-email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="login-password">Password</label>
+      <input type="password" id="login-password" name="password" required />
+    </div>
+    <button type="submit" class="button">Login</button>
+  </form>
+  <form id="registration-form" class="form">
+    <div class="form-group">
+      <label for="registration-name">Name</label>
+      <input type="text" id="registration-name" name="name" required />
+    </div>
+    <div class="form-group">
+      <label for="registration-email">Email</label>
+      <input type="email" id="registration-email" name="email" required />
+    </div>
+    <div class="form-group">
+      <label for="registration-password">Password</label>
+      <input
+        type="password"
+        id="registration-password"
+        name="password"
+        required
+      />
+    </div>
+    <button type="submit" class="button">Registration</button>
+  </form>
+</div>

@@ -1,0 +1,159 @@
+// styles.scss
+$primary-color: #007bff;
+$error-color: red;
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+#open-modal {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+
+  &-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error {
+  border: 1px solid $error-color;
+
+  &-message {
+    color: $error-color;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+.close-modal {
+  cursor: pointer;
+}
+
+.modal-window {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 400px;
+  max-width: 80%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+
+  h2 {
+    display: flex;
+    text-align: center;
+    padding: 0 20px 20px 20px;
+    justify-content: center;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #2196f3;
+  cursor: pointer;
+}
+
+/* Анимация при открытии модального окна */
+.modal-window.show .modal-content-window {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-window.hide .modal-content-window {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-window.active .close {
+  display: none;
+}

@@ -1,0 +1,64 @@
+// style.scss
+$blue: lighten(#007bff, 20%);
+
+.card {
+  width: 400px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 0 20px 20px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: $blue;
+}
+
+.tab {
+  display: inline-block;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  &:checked + label {
+    background-color: darken($blue, 10%);
+  }
+}
+
+@mixin input-style {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#login-tab,
+#registration-tab {
+  display: none;
+}
+
+#login-form {
+  display: none;
+}
+
+.card-nav {
+  display: flex;
+}
+
+.form-group input {
+  @include input-style;
+}
+
+input[type="radio"]:checked + label {
+  color: #007bff;
+}
+
+.button {
+  @include input-style;
+  border: none;
+  background-color: darken($blue, 20%);
+  color: #fff;
+  font-weight: bold;
+  margin-top: 15px;
+  cursor: pointer;
+}
